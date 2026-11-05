@@ -25,6 +25,8 @@ cp signing.env.example signing.env   # point it at your keystore; the file is gi
 ./build.sh                           # build/TurkceQKlavye.apk
 ```
 
+The signing keystore stays on the maintainer's machine and never enters this repo. Android installs an update over an existing copy only when both are signed with the same key, so keep a backup of yours.
+
 ## Install
 
 ```bash
