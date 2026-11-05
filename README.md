@@ -13,6 +13,7 @@
 - Turns any Bluetooth or USB keyboard into a Turkish Q keyboard (ç, ğ, ı, İ, ö, ş, ü, AltGr symbols, caps lock) by reading Linux scan codes, so it works whatever layout the system thinks the keyboard has.
 - When no physical keyboard is attached, shows an on-screen Turkish Q grid you drive with the remote's D-pad; holding select on backspace repeats it.
 - Arrow and Enter keys on a real keyboard keep their usual meaning.
+- The app name and the on-screen key labels are a Turkish UI; code and docs are English.
 - No permissions besides the input-method binding, no network access.
 
 ## Build

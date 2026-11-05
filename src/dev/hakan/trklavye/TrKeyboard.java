@@ -162,12 +162,12 @@ public class TrKeyboard extends InputMethodService {
     public void onStartInputView(EditorInfo info, boolean restarting) {
         super.onStartInputView(info, restarting);
         if (DEBUG) {
-            StringBuilder sb = new StringBuilder("aygıtlar:");
+            StringBuilder sb = new StringBuilder("devices:");
             for (int id : InputDevice.getDeviceIds()) {
                 InputDevice d = InputDevice.getDevice(id);
                 if (d != null && d.getKeyboardType() != InputDevice.KEYBOARD_TYPE_NONE) {
                     sb.append(" [").append(d.getName()).append(" t=").append(d.getKeyboardType())
-                      .append(d.isVirtual() ? " sanal" : "").append("]");
+                      .append(d.isVirtual() ? " virtual" : "").append("]");
                 }
             }
             debug(sb.toString());
@@ -232,9 +232,9 @@ public class TrKeyboard extends InputMethodService {
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (DEBUG) {
             InputDevice d = event.getDevice();
-            debug("kod=" + keyCode + " sc=" + event.getScanCode() + " aygıt="
-                    + (d == null ? "yok" : d.getName() + " t=" + d.getKeyboardType()
-                    + (d.isVirtual() ? " sanal" : "")));
+            debug("code=" + keyCode + " sc=" + event.getScanCode() + " device="
+                    + (d == null ? "none" : d.getName() + " t=" + d.getKeyboardType()
+                    + (d.isVirtual() ? " virtual" : "")));
         }
         if (handleRemoteKey(keyCode, event)) {
             remoteKeyDown = true;
